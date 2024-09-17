@@ -1,0 +1,4 @@
+test\BaseTest.class
+test\RunTest.class
+page\LoginPage.class
+page\TopMenu.class

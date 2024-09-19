@@ -1,4 +1,7 @@
+Report\ExtentTestManager.class
 test\BaseTest.class
+Report\ExtentReport.class
 test\RunTest.class
+page\DashboardPage.class
 page\LoginPage.class
 page\TopMenu.class

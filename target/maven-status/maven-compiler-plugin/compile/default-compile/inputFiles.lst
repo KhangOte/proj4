@@ -1,4 +1,7 @@
-D:\Automation Test\selenium\proj4\src\main\java\page\LoginPage.java
-D:\Automation Test\selenium\proj4\src\main\java\page\TopMenu.java
-D:\Automation Test\selenium\proj4\src\main\java\test\BaseTest.java
-D:\Automation Test\selenium\proj4\src\main\java\test\RunTest.java
+D:\Automation Test\selenium\project4\src\main\java\page\DashboardPage.java
+D:\Automation Test\selenium\project4\src\main\java\page\LoginPage.java
+D:\Automation Test\selenium\project4\src\main\java\page\TopMenu.java
+D:\Automation Test\selenium\project4\src\main\java\Report\ExtentReport.java
+D:\Automation Test\selenium\project4\src\main\java\Report\ExtentTestManager.java
+D:\Automation Test\selenium\project4\src\main\java\test\BaseTest.java
+D:\Automation Test\selenium\project4\src\main\java\test\RunTest.java

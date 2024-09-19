@@ -6,7 +6,8 @@
         <classes>
             <class name="test.RunTest">
                 <methods>
-                    <include name="test1"/>
+<!--                    <include name="test1"/>-->
+                    <include name="test2"/>
                 </methods>
             </class>
         </classes>

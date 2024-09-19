@@ -19,4 +19,9 @@ public class TopMenu {
         driver.findElement(By.linkText("Sign in")).click();
         return new LoginPage(driver);
     }
+
+    public DashboardPage clickDashboard(){
+        driver.findElement(By.linkText("Dashboard")).click();
+        return new DashboardPage(driver);
+    }
 }

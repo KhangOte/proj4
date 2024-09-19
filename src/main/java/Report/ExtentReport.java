@@ -1,16 +1,19 @@
 package Report;
 
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import org.openqa.selenium.WebDriver;
 
 public class ExtentReport {
-    private static final ExtentReports extentReports = new ExtentReports();
-    public synchronized static ExtentReports getExtentReport(){
-        ExtentSparkReporter reporter = new ExtentSparkReporter("");
-        reporter.config().setReportName("Report for proj4");
-        extentReports.attachReporter(reporter);
-        extentReports.setSystemInfo("","");
-        extentReports.setSystemInfo("","");
-        return extentReports;
+    static ExtentTest test;
+    static ExtentReports reports;
+    WebDriver driver;
+
+    public static void startTest(){
+    reports = new ExtentReports(System.getProperty("user.dir")+"ExtentReportResults.html");
+    test = reports.startTest("ExtentReport");
     }
+
 }
+

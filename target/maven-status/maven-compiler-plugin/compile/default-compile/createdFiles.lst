@@ -1,6 +1,6 @@
 Report\ExtentTestManager.class
 test\BaseTest.class
-Report\ExtentReport.class
+Report\TestReport.class
 test\RunTest.class
 page\DashboardPage.class
 page\LoginPage.class

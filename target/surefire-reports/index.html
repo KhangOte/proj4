@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,17 +103,7 @@
                     <div class="method-list-content passed suite-Suite1">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite1" title="test.RunTest" class="method navigator-link" hash-for-method="test2(minionmatbua@gmail.com, 12345678)">test2(minionmatbua@gmail.com, 12345678)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite1" title="test.RunTest" class="method navigator-link" hash-for-method="test2(minionmatbua@gmail, 123456)">test2(minionmatbua@gmail, 123456)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite1" title="test.RunTest" class="method navigator-link" hash-for-method="test2(minionmatbua@gmail.com, 12345)">test2(minionmatbua@gmail.com, 12345)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite1 -->
@@ -136,26 +126,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test2(minionmatbua@gmail.com, 12345678)">
-                  </a> <!-- test2(minionmatbua@gmail.com, 12345678) -->
-                  <span class="method-name">test2</span>
-                  <span class="parameters">(minionmatbua@gmail.com,12345678)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="test2(minionmatbua@gmail, 123456)">
                   </a> <!-- test2(minionmatbua@gmail, 123456) -->
                   <span class="method-name">test2</span>
                   <span class="parameters">(minionmatbua@gmail,123456)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test2(minionmatbua@gmail.com, 12345)">
-                  </a> <!-- test2(minionmatbua@gmail.com, 12345) -->
-                  <span class="method-name">test2</span>
-                  <span class="parameters">(minionmatbua@gmail.com,12345)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -216,24 +190,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'test2')
 data.setCell(0, 2, 'test.RunTest')
-data.setCell(0, 3, 6732);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'test2')
-data.setCell(1, 2, 'test.RunTest')
-data.setCell(1, 3, 6317);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'test2')
-data.setCell(2, 2, 'test.RunTest')
-data.setCell(2, 3, 6207);
+data.setCell(0, 3, 6191);
 window.suiteTableData['Suite1']= { tableData: data, tableDiv: 'times-div-Suite1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 19 seconds</span>
+              <span class="suite-total-time">Total running time: 6 seconds</span>
               <div id="times-div-Suite1">
               </div> <!-- times-div-Suite1 -->
             </div> <!-- times-div -->
@@ -267,30 +233,22 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">test.RunTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">testSetUp</span>
+              <div class="configuration-test before">
+                <span class="method-name">startTest</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-method before">
+                <span class="method-name">testSetUp(public void test.RunTest.test2(java.lang.String,java.lang.String) throws java.lang.InterruptedExcept...)</span>
+                <span class="method-start">23 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">test2(minionmatbua@gmail, 123456)</span>
-                <span class="method-start">8293 ms</span>
+                <span class="method-start">9180 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">testSetUp</span>
-                <span class="method-start">14500 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">test2(minionmatbua@gmail.com, 12345)</span>
-                <span class="method-start">22646 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">testSetUp</span>
-                <span class="method-start">29378 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">test2(minionmatbua@gmail.com, 12345678)</span>
-                <span class="method-start">37031 ms</span>
-              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">extracted</span>
+                <span class="method-start">15372 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

@@ -2,6 +2,7 @@ package test;
 
 
 
+import Report.TestReport;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -11,10 +12,12 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.devtools.v126.page.model.Screenshot;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.testng.ITestContext;
+import org.testng.ITestListener;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import page.DashboardPage;
@@ -23,6 +26,9 @@ import page.TopMenu;
 
 import java.lang.reflect.Method;
 import java.time.Duration;
+
+import static Report.TestReport.captureScreenshot;
+
 
 public class RunTest extends BaseTest {
     private String testName;
@@ -44,21 +50,29 @@ public class RunTest extends BaseTest {
     @DataProvider(name = "test1")
     public static Object[][] accountLogin(){
         return new Object[][]{{"minionmatbua@gmail","123456"},{"minionmatbua@gmail.com","12345"},{"minionmatbua@gmail.com","12345678"}};
+//        return new Object[][]{{"minionmatbua@gmail.com","12345678"}};
     }
 
     @Test(dataProvider = "test1")
-    public void test1(String email,String password){
+    public void test1(String email,String password) {
         String messageLoginFailed = "Invalid Email or password.";
         String messageLoginSuccessfully = "Signed in successfully.";
         SoftAssert softAssert = new SoftAssert();
         TopMenu topMenu = new TopMenu(driver);
         LoginPage loginPage = topMenu.clickSignInButton();
-        loginPage.login(email,password);
-        String messageResultLogin = loginPage.verifyLogin();
-        softAssert.assertEquals(messageResultLogin,messageLoginFailed);
-        softAssert.assertEquals(messageResultLogin,messageLoginSuccessfully);
+        loginPage.login(email, password);
 
-        driver.quit();
+        captureScreenshot(driver,"./login-tab2.png");
+        testCaseReport.addScreenCaptureFromPath("./login-tab2.png").log(Status.INFO,"Screenshot for login tab");
+        String messageResultLogin = loginPage.verifyLogin();
+        try {
+//            Assert.assertEquals(messageResultLogin, messageLoginFailed);
+            Assert.assertEquals(messageResultLogin, messageLoginSuccessfully);
+            testCaseReport.log(Status.PASS, "Login successfully");
+        } catch (AssertionError assertionError){
+            testCaseReport.log(Status.FAIL, "Login failed");
+        }
+//        ITestListener
     }
 
     @Test
@@ -72,9 +86,8 @@ public class RunTest extends BaseTest {
     @Test(dataProvider = "test2")
     public void test2(String email,String password) throws InterruptedException{
 
-        String CODE1 = "{\n    \"theme\": \"standard\",\n    \"encoding\": \"utf-8\n}";
-        String CODE2 = "{\n    \"protocol\": \"HTTPS\",\n    \"timelineEnabled\": false\n}";
-
+//        String CODE1 = "{\n    \"theme\": \"standard\",\n    \"encoding\": \"utf-8\n}";
+//        String CODE2 = "{\n    \"protocol\": \"HTTPS\",\n    \"timelineEnabled\": false\n}";
 
         TopMenu topMenu = new TopMenu(driver);
 
@@ -85,11 +98,11 @@ public class RunTest extends BaseTest {
         driver.switchTo().window(windowHandle[1].toString());
 
         testCaseReport.log(Status.INFO, "switch to new tab");
-
         driver.findElement(By.linkText("Sign in")).click();
         Thread.sleep(2000);
+
         dashboardPage.loginInDashboard(email,password);
-        testCaseReport.log(Status.PASS, "Verify LOGIN success updated");
+        testCaseReport.log(Status.PASS, "Verify LOGIN success ");
 //
 //        ExtentReports extent = new ExtentReports();
 //        ExtentSparkReporter spark = new ExtentSparkReporter("./Report");

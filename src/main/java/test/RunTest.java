@@ -1,7 +1,6 @@
 package test;
 
 
-
 import Report.TestReport;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -22,6 +21,7 @@ import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import page.DashboardPage;
 import page.LoginPage;
+import page.TestListener;
 import page.TopMenu;
 
 import java.lang.reflect.Method;
@@ -29,12 +29,12 @@ import java.time.Duration;
 
 import static Report.TestReport.captureScreenshot;
 
-
+@Listeners(TestListener.class)
 public class RunTest extends BaseTest {
     private String testName;
 
     @BeforeMethod
-    public void testSetUp(Method testMethod){
+    public void testSetUp(Method testMethod) {
         super.testInit();
         testName = testMethod.getName();
         testCaseReport = report.createTest(testName);
@@ -42,49 +42,50 @@ public class RunTest extends BaseTest {
     }
 
     @BeforeTest
-    public void startTest(){
+    public void startTest() {
         System.out.println("BeforeTest");
     }
 
     @Test
     @DataProvider(name = "test1")
-    public static Object[][] accountLogin(){
-        return new Object[][]{{"minionmatbua@gmail","123456"},{"minionmatbua@gmail.com","12345"},{"minionmatbua@gmail.com","12345678"}};
-//        return new Object[][]{{"minionmatbua@gmail.com","12345678"}};
+    public static Object[][] accountLogin() {
+//        return new Object[][]{{"minionmatbua@gmail","123456"},{"minionmatbua@gmail.com","12345"},{"minionmatbua@gmail.com","12345678"}};
+        return new Object[][]{{"minionmatbua@gmail.com", "12345678"}};
     }
 
     @Test(dataProvider = "test1")
-    public void test1(String email,String password) {
+    public void test1(String email, String password) {
         String messageLoginFailed = "Invalid Email or password.";
-        String messageLoginSuccessfully = "Signed in successfully.";
-        SoftAssert softAssert = new SoftAssert();
+        String messageLoginSuccessfully = "Signed in successfully1.";
         TopMenu topMenu = new TopMenu(driver);
         LoginPage loginPage = topMenu.clickSignInButton();
         loginPage.login(email, password);
-
-        captureScreenshot(driver,"./login-tab2.png");
-        testCaseReport.addScreenCaptureFromPath("./login-tab2.png").log(Status.INFO,"Screenshot for login tab");
+        String nameImage = ".\\Picture\\" + TestReport.getTime();
+        System.out.println(nameImage);
+//        captureScreenshot(driver, nameImage);
+        captureScreenshot(nameImage);
+        testCaseReport.addScreenCaptureFromPath(nameImage).log(Status.INFO, "Screenshot for login tab");
         String messageResultLogin = loginPage.verifyLogin();
-        try {
+//        try {
 //            Assert.assertEquals(messageResultLogin, messageLoginFailed);
             Assert.assertEquals(messageResultLogin, messageLoginSuccessfully);
-            testCaseReport.log(Status.PASS, "Login successfully");
-        } catch (AssertionError assertionError){
-            testCaseReport.log(Status.FAIL, "Login failed");
-        }
+
+//        } catch (AssertionError assertionError) {
+//            testCaseReport.log(Status.FAIL, "Login failed");
+//        }
 //        ITestListener
     }
 
     @Test
     @DataProvider(name = "test2")
-    public static Object[][] accountLoginForDashboard(){
+    public static Object[][] accountLoginForDashboard() {
 //        return new Object[][]{{"minionmatbua@gmail","123456"},{"minionmatbua@gmail.com","12345"},{"minionmatbua@gmail.com","12345678"}};
-        return new Object[][]{{"minionmatbua@gmail","123456"}};
+        return new Object[][]{{"minionmatbua@gmail", "123456"}};
 
     }
 
     @Test(dataProvider = "test2")
-    public void test2(String email,String password) throws InterruptedException{
+    public void test2(String email, String password) throws InterruptedException {
 
 //        String CODE1 = "{\n    \"theme\": \"standard\",\n    \"encoding\": \"utf-8\n}";
 //        String CODE2 = "{\n    \"protocol\": \"HTTPS\",\n    \"timelineEnabled\": false\n}";
@@ -101,7 +102,7 @@ public class RunTest extends BaseTest {
         driver.findElement(By.linkText("Sign in")).click();
         Thread.sleep(2000);
 
-        dashboardPage.loginInDashboard(email,password);
+        dashboardPage.loginInDashboard(email, password);
         testCaseReport.log(Status.PASS, "Verify LOGIN success ");
 //
 //        ExtentReports extent = new ExtentReports();

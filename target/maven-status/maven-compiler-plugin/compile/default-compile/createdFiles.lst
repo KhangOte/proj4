@@ -3,5 +3,6 @@ test\BaseTest.class
 Report\TestReport.class
 test\RunTest.class
 page\DashboardPage.class
+page\TestListener.class
 page\LoginPage.class
 page\TopMenu.class

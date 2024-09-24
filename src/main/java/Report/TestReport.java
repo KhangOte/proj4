@@ -12,6 +12,9 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class TestReport {
 
@@ -32,6 +35,17 @@ public class TestReport {
             System.out.println(ex.getMessage());
         }
     }
+
+//    public static void createTime(String[]args){
+//        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+//        Date date = new Date();
+//        System.out.println(formatter.format(date));
+//    }
+public static String getTime(){
+    String time = new SimpleDateFormat("yyyyMMdd-HHmmss").
+            format(Calendar.getInstance().getTime())+".png";
+    return time;
+}
 
 }
 

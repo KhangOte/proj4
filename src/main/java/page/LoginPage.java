@@ -6,6 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class LoginPage {
     WebDriver driver;
 
@@ -33,4 +36,6 @@ public class LoginPage {
         String resultLogin = driver.findElement(By.xpath("//div[@class = 'panel-body']")).getText();
         return resultLogin;
     }
+
+
 }

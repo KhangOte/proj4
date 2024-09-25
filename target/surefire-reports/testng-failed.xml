@@ -5,7 +5,7 @@
     <classes>
       <class name="test.RunTest">
         <methods>
-          <include name="test1" invocation-numbers="0"/>
+          <include name="test1" invocation-numbers="0 1"/>
           <include name="extracted"/>
           <include name="startTest"/>
           <include name="testSetUp"/>

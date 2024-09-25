@@ -1,22 +1,10 @@
 package test;
 
 
-import Report.TestReport;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.devtools.v126.page.model.Screenshot;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.testng.ITestContext;
-import org.testng.ITestListener;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import page.DashboardPage;
@@ -25,9 +13,8 @@ import page.TestListener;
 import page.TopMenu;
 
 import java.lang.reflect.Method;
-import java.time.Duration;
 
-import static Report.TestReport.captureScreenshot;
+import static Report.TestReport.*;
 
 @Listeners(TestListener.class)
 public class RunTest extends BaseTest {
@@ -49,26 +36,28 @@ public class RunTest extends BaseTest {
     @Test
     @DataProvider(name = "test1")
     public static Object[][] accountLogin() {
-//        return new Object[][]{{"minionmatbua@gmail","123456"},{"minionmatbua@gmail.com","12345"},{"minionmatbua@gmail.com","12345678"}};
-        return new Object[][]{{"minionmatbua@gmail.com", "12345678"}};
+        return new Object[][]{{"minionmatbua@gmail", "123456"}, {"minionmatbua@gmail.com", "12345"}, {"minionmatbua@gmail.com", "12345678"}};
+//        return new Object[][]{{"minionmatbua@gmail.com", "12345678"}};
     }
 
     @Test(dataProvider = "test1")
     public void test1(String email, String password) {
-        String messageLoginFailed = "Invalid Email or password.";
-        String messageLoginSuccessfully = "Signed in successfully1.";
+        String messageLoginSuccessfully = "Signed in successfully.";
+        SoftAssert softAssert = new SoftAssert();
         TopMenu topMenu = new TopMenu(driver);
         LoginPage loginPage = topMenu.clickSignInButton();
         loginPage.login(email, password);
-        String nameImage = ".\\Picture\\" + TestReport.getTime();
+        String nameImage = getNameImage(testName);
         System.out.println(nameImage);
-//        captureScreenshot(driver, nameImage);
-        captureScreenshot(nameImage);
-        testCaseReport.addScreenCaptureFromPath(nameImage).log(Status.INFO, "Screenshot for login tab");
+        captureScreenshot(driver, nameImage);
+
+        testCaseReport.addScreenCaptureFromPath(nameImage).log(Status.INFO, "Screenshot for login tab test");
         String messageResultLogin = loginPage.verifyLogin();
+        Assert.assertEquals(messageResultLogin, messageLoginSuccessfully);
+
 //        try {
 //            Assert.assertEquals(messageResultLogin, messageLoginFailed);
-            Assert.assertEquals(messageResultLogin, messageLoginSuccessfully);
+
 
 //        } catch (AssertionError assertionError) {
 //            testCaseReport.log(Status.FAIL, "Login failed");

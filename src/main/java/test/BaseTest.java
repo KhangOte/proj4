@@ -8,13 +8,10 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
+import org.testng.ITestContext;
 
 public abstract class BaseTest {
-    WebDriver driver;
+    public static WebDriver driver;
     public void BaseTest(WebDriver driver){
         this.driver = driver;
     }
@@ -26,13 +23,13 @@ public abstract class BaseTest {
     public static ExtentReports  report = TestReport.createTestReport();// create report file
     public static ExtentTest testCaseReport;
 
-    public void captureScreenshot(String filename) {
-        File image = ((TakesScreenshot) this.driver).getScreenshotAs(OutputType.FILE);
-        File screenshotFile = new File(filename);
-        try {
-            FileUtils.copyFile(image, screenshotFile);
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
+//    public void captureScreenshot(String filename) {
+//        File image = ((TakesScreenshot) this.driver).getScreenshotAs(OutputType.FILE);
+//        File screenshotFile = new File(filename);
+//        try {
+//            FileUtils.copyFile(image, screenshotFile);
+//        } catch (IOException ex) {
+//            System.out.println(ex.getMessage());
+//        }
+//    }
 }

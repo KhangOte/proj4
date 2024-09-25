@@ -145,5 +145,7 @@ public class RunTest extends BaseTest {
         driver.quit();
     }
 
+    public void test5(){}
+
 
 }

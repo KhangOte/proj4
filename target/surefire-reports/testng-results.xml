@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="3" passed="1" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-25T21:44:14 ICT" name="Suite1" finished-at="2024-09-25T21:44:51 ICT" duration-ms="37131">
+  <suite started-at="2024-09-26T15:34:14 ICT" name="Suite1" finished-at="2024-09-26T15:34:57 ICT" duration-ms="43225">
     <groups>
     </groups>
-    <test started-at="2024-09-25T21:44:14 ICT" name="PackageTest" finished-at="2024-09-25T21:44:51 ICT" duration-ms="37131">
+    <test started-at="2024-09-26T15:34:14 ICT" name="PackageTest" finished-at="2024-09-26T15:34:57 ICT" duration-ms="43225">
       <class name="test.RunTest">
-        <test-method is-config="true" signature="startTest()[pri:0, instance:test.RunTest@6933b6c6]" started-at="2024-09-25T21:44:14 ICT" name="startTest" finished-at="2024-09-25T21:44:14 ICT" duration-ms="16" status="PASS">
+        <test-method is-config="true" signature="startTest()[pri:0, instance:test.RunTest@7d3e8655]" started-at="2024-09-26T15:34:14 ICT" name="startTest" finished-at="2024-09-26T15:34:14 ICT" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startTest -->
-        <test-method is-config="true" signature="testSetUp(java.lang.reflect.Method)[pri:0, instance:test.RunTest@6933b6c6]" started-at="2024-09-25T21:44:14 ICT" name="testSetUp" finished-at="2024-09-25T21:44:23 ICT" duration-ms="9209" status="PASS">
+        <test-method is-config="true" signature="testSetUp(java.lang.reflect.Method)[pri:0, instance:test.RunTest@7d3e8655]" started-at="2024-09-26T15:34:14 ICT" name="testSetUp" finished-at="2024-09-26T15:34:24 ICT" duration-ms="10586" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSetUp -->
-        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:test.RunTest@6933b6c6]" started-at="2024-09-25T21:44:23 ICT" name="test1" data-provider="test1" finished-at="2024-09-25T21:44:27 ICT" duration-ms="3488" status="FAIL">
+        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:test.RunTest@7d3e8655]" started-at="2024-09-26T15:34:24 ICT" name="test1" data-provider="test1" finished-at="2024-09-26T15:34:28 ICT" duration-ms="3660" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -84,11 +84,11 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method is-config="true" signature="extracted()[pri:0, instance:test.RunTest@6933b6c6]" started-at="2024-09-25T21:44:27 ICT" name="extracted" finished-at="2024-09-25T21:44:27 ICT" duration-ms="366" status="PASS">
+        <test-method is-config="true" signature="extracted()[pri:0, instance:test.RunTest@7d3e8655]" started-at="2024-09-26T15:34:28 ICT" name="extracted" finished-at="2024-09-26T15:34:28 ICT" duration-ms="381" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extracted -->
-        <test-method is-config="true" signature="testSetUp(java.lang.reflect.Method)[pri:0, instance:test.RunTest@6933b6c6]" started-at="2024-09-25T21:44:27 ICT" name="testSetUp" finished-at="2024-09-25T21:44:34 ICT" duration-ms="6797" status="PASS">
+        <test-method is-config="true" signature="testSetUp(java.lang.reflect.Method)[pri:0, instance:test.RunTest@7d3e8655]" started-at="2024-09-26T15:34:28 ICT" name="testSetUp" finished-at="2024-09-26T15:34:37 ICT" duration-ms="8910" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -99,7 +99,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSetUp -->
-        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:test.RunTest@6933b6c6]" started-at="2024-09-25T21:44:34 ICT" name="test1" data-provider="test1" finished-at="2024-09-25T21:44:38 ICT" duration-ms="4056" status="FAIL">
+        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:test.RunTest@7d3e8655]" started-at="2024-09-26T15:34:37 ICT" name="test1" data-provider="test1" finished-at="2024-09-26T15:34:42 ICT" duration-ms="4984" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -161,11 +161,11 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method is-config="true" signature="extracted()[pri:0, instance:test.RunTest@6933b6c6]" started-at="2024-09-25T21:44:38 ICT" name="extracted" finished-at="2024-09-25T21:44:38 ICT" duration-ms="199" status="PASS">
+        <test-method is-config="true" signature="extracted()[pri:0, instance:test.RunTest@7d3e8655]" started-at="2024-09-26T15:34:42 ICT" name="extracted" finished-at="2024-09-26T15:34:43 ICT" duration-ms="180" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extracted -->
-        <test-method is-config="true" signature="testSetUp(java.lang.reflect.Method)[pri:0, instance:test.RunTest@6933b6c6]" started-at="2024-09-25T21:44:38 ICT" name="testSetUp" finished-at="2024-09-25T21:44:46 ICT" duration-ms="7714" status="PASS">
+        <test-method is-config="true" signature="testSetUp(java.lang.reflect.Method)[pri:0, instance:test.RunTest@7d3e8655]" started-at="2024-09-26T15:34:43 ICT" name="testSetUp" finished-at="2024-09-26T15:34:50 ICT" duration-ms="7736" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -176,7 +176,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSetUp -->
-        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:test.RunTest@6933b6c6]" started-at="2024-09-25T21:44:46 ICT" name="test1" data-provider="test1" finished-at="2024-09-25T21:44:51 ICT" duration-ms="4810" status="PASS">
+        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:test.RunTest@7d3e8655]" started-at="2024-09-26T15:34:50 ICT" name="test1" data-provider="test1" finished-at="2024-09-26T15:34:57 ICT" duration-ms="6322" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -192,7 +192,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method is-config="true" signature="extracted()[pri:0, instance:test.RunTest@6933b6c6]" started-at="2024-09-25T21:44:51 ICT" name="extracted" finished-at="2024-09-25T21:44:51 ICT" duration-ms="164" status="PASS">
+        <test-method is-config="true" signature="extracted()[pri:0, instance:test.RunTest@7d3e8655]" started-at="2024-09-26T15:34:57 ICT" name="extracted" finished-at="2024-09-26T15:34:57 ICT" duration-ms="161" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extracted -->
